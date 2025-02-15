@@ -1,5 +1,7 @@
 import sqlite3
 import pandas as pd
+#git push -u origin newb
+
 
 # Define the SQLite database path
 database_path = 'demoDb.sqlite'
