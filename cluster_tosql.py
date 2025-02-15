@@ -1,11 +1,14 @@
 import sqlite3
 import pandas as pd
+import matplotlib.pyplot as plt
+
 
 # Define the SQLite database path
 database_path = 'demoDb.sqlite'
 
 # Define the path to the CSV file
 csv_path = 'clusters.csv'
+
 
 # Read the CSV file into a pandas DataFrame
 df = pd.read_csv(csv_path)
@@ -43,6 +46,18 @@ rows = cursor.fetchall()
 for row in rows:
     print(row)
 
+
 # Close the connection
 connection.close()
-#https://www.youtube.com/watch?v=tASbwz3NONQ
+
+# Check the first few rows
+print(table_name.head())
+
+# Plot the data
+plt.figure(figsize=(8, 5))
+plt.bar(table_name["Region"], table_name["Estimate"], color=['blue', 'green'])
+
+plt.xlabel("Region")
+plt.ylabel("Estimate")
+plt.title("Main Estimates from West and Scandinavia")
+plt.show()
