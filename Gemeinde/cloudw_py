@@ -1,0 +1,22 @@
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+# Text input
+text = """
+I am Sachsen, my ancestors come from Rhine Westfalia and Waloon,
+my mom left For Nurnberg when she was pregnant with me during communism outbreak in romania.
+After 20 years when I grew older they came back to Brasov and now me and my partner have three kids and grew a musical lifestyle.
+My kids all three learn organ and cello, I am a conductor for the swiss Philarmonic and the Brasov one but am also organist in Brasov.
+My ancestors came from Waloon and Nurnberg, we are all from Medias but live in Brasov, over 4 generations we have been repairing musical instruments,
+building church organs and sang in choirs. All of our family. Right now my elder son plays in the Bamberg phylarmonic the cello and the choir and also part of the Brasov Bach Choir.
+Our universe is very much the Brasov local german community.
+"""
+
+# Generate word cloud
+wordcloud = WordCloud(width=800, height=400, background_color="white", colormap="coolwarm").generate(text)
+
+# Display word cloud
+plt.figure(figsize=(10, 5))
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis("off")
+plt.show()
